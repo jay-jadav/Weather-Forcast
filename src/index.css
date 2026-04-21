@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 transition-colors duration-500 min-h-screen font-sans;
+    background-color: #f8fafc;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,0.03) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
+  }
+  
+  .dark body {
+    @apply text-slate-100;
+    background-color: #0b1120;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-glass-light dark:bg-glass-dark backdrop-blur-glass border border-glass-border-light dark:border-glass-border-dark rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-[0_8px_32px_0_rgba(31,38,135,0.3)] transition-all duration-300;
+  }
+  
+  .weather-gradient-sunny {
+    @apply bg-gradient-to-br from-cyan-400 via-blue-400 to-indigo-500 shadow-xl shadow-blue-500/20;
+  }
+  
+  .weather-gradient-cloudy {
+    @apply bg-gradient-to-br from-slate-400 via-slate-500 to-slate-700 shadow-xl shadow-slate-500/20;
+  }
+  
+  .weather-gradient-rainy {
+    @apply bg-gradient-to-br from-indigo-500 via-purple-600 to-slate-800 shadow-xl shadow-indigo-500/20;
+  }
+  
+  .weather-gradient-night {
+    @apply bg-gradient-to-br from-slate-900 via-indigo-950 to-blue-950 shadow-xl shadow-indigo-900/30;
+  }
+}
+
+/* Custom Scrollbar for modern look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300/80 dark:bg-slate-700/80 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
